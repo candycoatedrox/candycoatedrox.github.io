@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+        }
+        caption {
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table</h1>
+    <p><i><a href="../hw1.html">Back to Hw1</a></i></p>
+
+    <br>
+
+    <p>A basic table with borders and padding:</p>
+    <table>
+        <caption><b>Fall Semester 2026</b></caption>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Meeting Days</th>
+            <th>Meeting Times</th>
+        </tr>
+        <tr>
+            <td>MTH 153</td>
+            <td>Intro to Discrete Math</td>
+            <td>Mon/Wed/Fri</td>
+            <td>9:25am - 10:40am</td>
+        </tr>
+        <tr>
+            <td>CSC 160</td>
+            <td>Intro to Game Design</td>
+            <td>Mon/Wed/Fri</td>
+            <td>1:20pm - 2:35pm</td>
+        </tr>
+        <tr>
+            <td>MUS 952</td>
+            <td>Smith College Glee Club</td>
+            <td>Mon/Wed</td>
+            <td>4:30pm - 5:40pm</td>
+        </tr>
+        <tr>
+            <td>CSC 209</td>
+            <td>Web Programming</td>
+            <td>Tue/Thu</td>
+            <td>10:50am - 12:05pm</td>
+        </tr>
+        <tr>
+            <td>ARH 110</td>
+            <td>Art and its Histories</td>
+            <td>Tue/Thu</td>
+            <td>1:20pm - 2:35pm</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <p>With column sizes adjusted:</p>
+    <table>
+        <caption><b>Fall Semester 2026</b></caption>
+        <tr>
+            <th>Code</th>
+            <th style="width:40%">Name</th>
+            <th style="width:25%">Meeting Days</th>
+            <th>Meeting Times</th>
+        </tr>
+        <tr>
+            <td>MTH 153</td>
+            <td>Intro to Discrete Math</td>
+            <td>Mon/Wed/Fri</td>
+            <td>9:25am - 10:40am</td>
+        </tr>
+        <tr>
+            <td>CSC 160</td>
+            <td>Intro to Game Design</td>
+            <td>Mon/Wed/Fri</td>
+            <td>1:20pm - 2:35pm</td>
+        </tr>
+        <tr>
+            <td>MUS 952</td>
+            <td>Smith College Glee Club</td>
+            <td>Mon/Wed</td>
+            <td>4:30pm - 5:40pm</td>
+        </tr>
+        <tr>
+            <td>CSC 209</td>
+            <td>Web Programming</td>
+            <td>Tue/Thu</td>
+            <td>10:50am - 12:05pm</td>
+        </tr>
+        <tr>
+            <td>ARH 110</td>
+            <td>Art and its Histories</td>
+            <td>Tue/Thu</td>
+            <td>1:20pm - 2:35pm</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <p>Using rowspan and colspan:</p>
+    <table>
+        <caption><b>Fall Semester 2026</b></caption>
+        <tr style="font-style:italic">
+            <th colspan="2">Course Info</th>
+            <th colspan="2">Section Info</th>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <th style="width:40%">Name</th>
+            <th style="width:25%">Meeting Days</th>
+            <th>Meeting Times</th>
+        </tr>
+        <tr>
+            <td>MTH 153</td>
+            <td>Intro to Discrete Math</td>
+            <td rowspan="2">Mon/Wed/Fri</td>
+            <td>9:25am - 10:40am</td>
+        </tr>
+        <tr>
+            <td>CSC 160</td>
+            <td>Intro to Game Design</td>
+            <td>1:20pm - 2:35pm</td>
+        </tr>
+        <tr>
+            <td>MUS 952</td>
+            <td>Smith College Glee Club</td>
+            <td>Mon/Wed</td>
+            <td>4:30pm - 5:40pm</td>
+        </tr>
+        <tr>
+            <td>CSC 209</td>
+            <td>Web Programming</td>
+            <td rowspan="2">Tue/Thu</td>
+            <td>10:50am - 12:05pm</td>
+        </tr>
+        <tr>
+            <td>ARH 110</td>
+            <td>Art and its Histories</td>
+            <td>1:20pm - 2:35pm</td>
+        </tr>
+    </table>
+</body>
+</html>

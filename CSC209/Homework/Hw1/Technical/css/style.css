@@ -1,0 +1,51 @@
+body {
+    margin: 10px 20px;
+}
+
+table {
+    margin: 0 10%;
+    width: 80%;
+}
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.top th {
+    font-size: 1.2em;
+}
+.mid th {
+    width: 4%;
+}
+
+.mth {
+    color: forestgreen;
+}
+.cscfms {
+    color: purple;
+}
+.csc {
+    color: firebrick;
+}
+.arh {
+    color: darkblue;
+}
+
+footer {
+    margin-top: 25px;
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    background-color: gray;
+}
+footer a {
+    color: powderblue;
+}
