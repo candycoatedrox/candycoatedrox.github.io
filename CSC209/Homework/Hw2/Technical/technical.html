@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hw2 Technical</title>
+    <link id="stylesheet" rel="stylesheet" href="css/greyPalette.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Technical</h1>
+        <p><i><a href="../hw2.html">Back to Hw2</a></i></p>
+    </header>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="navinfo">
+                <b>MTH153</b>
+                <br> Intro to Discrete Math
+                <br> Fall 2026
+                <br> Jennifer Beichman
+            </div>
+
+            <br>
+
+            <img width="200px" src="https://discrete.openmathbooks.org/assets/images/cover4.png">
+            <p><i>Image taken from openmathbooks.org</i></p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://www.gradescope.com/">Gradescope</a> (Homework)</li>
+                <li><a href="https://www.overleaf.com">Overleaf</a> (Proofs)</li>
+                <li><a href="https://discrete.openmathbooks.org/dmoi4/frontmatter.html">Textbook</a></li>
+            </ul>
+
+            <hr>
+
+            <div class="layoutToggles">
+                <button onclick="setLayout(0)">Grey Palette</button>
+                <button onclick="setLayout(1)">Blue Palette</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Logical Connectives</h2>
+
+            <br>
+
+            <button id="readme" onclick="toggleReadMe()">Read me</button>
+            <p id="readmeText"></p>
+
+            <br>
+
+            <table>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Read as</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td class="symbol">~</td>
+                    <td><a href="negation.html">Negation</a></td>
+                    <td>NOT</td>
+                    <td>~P is true when P is false.</td>
+                </tr>
+                <tr>
+                    <td class="symbol">^</td>
+                    <td><a href="conjunction.html">Conjunction</a></td>
+                    <td>AND</td>
+                    <td>P^Q is true only if both P and Q are true.</td>
+                </tr>
+                <tr>
+                    <td class="symbol">v</td>
+                    <td><a href="disjunction.html">Disjunction</a></td>
+                    <td>OR</td>
+                    <td>PvQ is true if P, Q, or both are true.</td>
+                </tr>
+                <tr>
+                    <td class="symbol">></td>
+                    <td><a href="conditional.html">Conditional</a></td>
+                    <td>IMPLIES</td>
+                    <td>P>Q is true unless P but ~Q.</td>
+                </tr>
+                <tr>
+                    <td class="symbol"><></td>
+                    <td><a href="biconditional.html">Biconditional</a></td>
+                    <td>IF AND ONLY IF</td>
+                    <td>P<>Q is true when P and Q are both true or both false.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

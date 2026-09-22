@@ -1,0 +1,147 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.verticalNav {
+    width: 250px;
+    background-color: lightpink;
+    border: 2px solid rgb(29, 3, 3);
+}
+
+.verticalNav:not(.fullHeightNav) li {
+    text-align: center;
+    border-bottom: 2px solid rgb(29, 3, 3);
+}
+
+.verticalNav li:last-child {
+    border-bottom: none;
+}
+
+.verticalNav li a {
+    display: block;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.verticalNav li a:hover:not(.active) {
+    background-color: indianred;
+    color: white;
+}
+
+.fullHeightNav {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.fullHeightBody {
+    margin-left: 270px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+
+.horizontalNav {
+    overflow: hidden;
+    background-color: lightpink;
+}
+
+.navFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.horizontalNav li {
+    float: left;
+    border-right: 2px solid white;
+}
+
+.horizontalNav li:last-child {
+    border-right: none;
+}
+
+.horizontalNav li a {
+    display: block;
+    color: black;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.horizontalNav li a:hover:not(.active) {
+    background-color: indianred;
+    color: white;
+}
+
+.fixedTopBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.fixedBottomBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.fixedBarBody {
+    margin: 60px 10px;
+}
+
+.stickyBar {
+    position: sticky;
+    top: 0;
+}
+
+
+li a.active {
+    background-color: brown;
+    color: white;
+}
+
+
+header {
+    background-color: lightgrey;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+div.flexContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+div.flexContainer > div {
+    background-color: lightgrey;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    height: 500px;
+}
+
+div.flexContainer > div:last-child {
+    margin: none;
+}
+
+@media screen and (max-width:600px) {
+    div.flexContainer {
+        flex-direction: column;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 10px;
+
+    background-color: lightgrey;
+    padding: 8px;
+    text-align: center;
+}
