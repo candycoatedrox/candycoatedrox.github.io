@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw Points (6)</title>
+
+    <script>
+        var POINTCOLOR = "blue";
+        var POINTRADIUS = 10;
+
+        var LABELFONT = "16px Arial";
+    </script>
+
+    <script>
+        class Point {
+
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            drawC(ctx) {
+                ctx.strokeStyle = POINTCOLOR;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, POINTRADIUS, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+
+            drawSq(ctx) {
+                ctx.strokeStyle = POINTCOLOR;
+                ctx.strokeRect(this.x-POINTRADIUS, this.y-POINTRADIUS, POINTRADIUS*2, POINTRADIUS*2);
+            }
+
+            draw(ctx) {
+                this.drawC(ctx);
+            }
+
+            drawLabel(ctx, lab) {
+                ctx.font = LABELFONT;
+                ctx.fillText(lab, this.x-POINTRADIUS/2, this.y+POINTRADIUS/2);
+            }
+
+        }
+    </script>
+
+    <script>
+        function pointScene(ctx) {
+            for (let i = 0; i < 6; i++) {
+                let POINT = new Point((i+1)*100, 100);
+                POINT.draw(ctx);
+                POINT.drawLabel(ctx, i+1);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Draw 6 Points</h1>
+
+    <canvas id="ptsCanvas" width="800" height="600" style="border:1px solid black;"></canvas>
+
+    <script>
+        var CANVAS = document.getElementById("ptsCanvas");
+        var CTX = CANVAS.getContext("2d");
+        
+        pointScene(CTX);
+    </script>
+</body>
+</html>

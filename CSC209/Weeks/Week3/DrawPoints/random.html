@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw Random Points (1)</title>
+
+    <script>
+        var POINTCOLOR = "blue";
+        var POINTRADIUS = 10;
+
+        var LABELFONT = "16px Arial";
+    </script>
+
+    <script>
+        class Point {
+
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            drawC(ctx) {
+                ctx.strokeStyle = POINTCOLOR;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, POINTRADIUS, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+
+            drawSq(ctx) {
+                ctx.strokeStyle = POINTCOLOR;
+                ctx.strokeRect(this.x-POINTRADIUS, this.y-POINTRADIUS, POINTRADIUS*2, POINTRADIUS*2);
+            }
+
+            draw(ctx) {
+                this.drawC(ctx);
+            }
+
+            drawLabel(ctx, lab) {
+                ctx.font = LABELFONT;
+                ctx.fillText(lab, this.x-POINTRADIUS/2, this.y+POINTRADIUS/2);
+            }
+
+        }
+    </script>
+
+    <script>
+        function randomPoint(canvas) {
+            const r = canvas.getBoundingClientRect();
+            const w = r.width, h = r.height;
+            let x = Math.floor(Math.random() * w);
+            let y = Math.floor(Math.random() * h);
+            return new Point(x,y);
+        }
+
+        function pointScene(canvas, ctx) {
+            for (let i = 0; i < 6; i++) {
+                let POINT = randomPoint(canvas);
+                POINT.draw(ctx);
+                POINT.drawLabel(ctx, i+1);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Draw 6 Random Points</h1>
+    <p>Reload the page to re-generate the points.</p>
+
+    <canvas id="ptsCanvas" width="800" height="600" style="border:1px solid black;"></canvas>
+
+    <script>
+        var CANVAS = document.getElementById("ptsCanvas");
+        var CTX = CANVAS.getContext("2d");
+        
+        pointScene(CANVAS, CTX);
+    </script>
+</body>
+</html>

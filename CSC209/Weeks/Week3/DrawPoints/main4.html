@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw Points (5)</title>
+
+    <script>
+        var POINTCOLOR = "blue";
+        var POINTRADIUS = 10;
+
+        var LABELFONT = "16px Arial";
+    </script>
+
+    <script>
+        class Point {
+
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            draw(ctx) {
+                ctx.strokeStyle = POINTCOLOR;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, POINTRADIUS, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+
+            drawLabel(ctx, lab) {
+                ctx.font = LABELFONT;
+                ctx.fillText(lab, this.x-POINTRADIUS/2, this.y+POINTRADIUS/2);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Draw 6 Points</h1>
+
+    <canvas id="ptsCanvas" width="800" height="600" style="border:1px solid black;"></canvas>
+
+    <script>
+        var CANVAS = document.getElementById("ptsCanvas");
+        var CTX = CANVAS.getContext("2d");
+
+        for (let i = 0; i < 6; i++) {
+            let POINT = new Point((i+1)*100, 100);
+            POINT.draw(CTX);
+            POINT.drawLabel(CTX, i+1);
+        }
+    </script>
+</body>
+</html>
