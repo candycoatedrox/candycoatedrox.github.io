@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    border: 1px solid #01556c;
+    opacity: 0.75;
+}
+
+header {
+    background-color: #0997be;
+    border-bottom: 3px solid #01556c;
+    text-align: center;
+    padding: 20px;
+}
+
+header a {
+    color: #0e3945;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.main.rightMenu {
+    flex-direction: row-reverse;
+}
+
+.navbar {
+    flex: 23%;
+    background-color: #a3ddec;
+    border-right: 3px solid #01556c;
+    padding: 20px 25px;
+}
+
+.navbar.rightMenu {
+    border-left: 3px solid #01556c;
+    border-right: none;
+    text-align: right;
+}
+
+.navinfo {
+    font-size: 1.2em;
+}
+
+img {
+    padding-bottom: 10px;
+}
+
+ul.external {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #afecfc;
+}
+
+button.standard {
+    padding: 5px 10px;
+}
+
+.layoutButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 10px 0;
+    
+    margin-bottom: 20px;
+}
+
+.layoutButtons.rightMenu {
+    justify-content: right;
+}
+
+.layoutButtons button {
+    background-color: #d7f7ff;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.content {
+    flex: 75%;
+    background-color: #67cde9;
+    padding: 20px 25px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.dateFlex {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+#date {
+    margin-top: 3px;
+}
+
+.showButtons {
+    flex-direction: row;
+    gap: 10px;
+}
+
+.showButtons button {
+    padding: 10px 15px;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: #0d5265;
+    color: white;
+}
+
+td {
+    background-color: #d7f7ff;
+}
+
+caption {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.symbol {
+    text-align: center;
+    font-weight: bold;
+}
+
+.truthTable {
+    width: 20%;
+    text-align: center;
+}
+
+#credits {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 0.8em;
+}

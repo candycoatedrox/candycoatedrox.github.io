@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Strings & Arrays</title>
+    <style>
+        body { padding: 0 10px; }
+    </style>
+</head>
+
+<body>
+    <h1>JS Strings & Arrays</h1>
+
+    <br>
+
+    <h2>Strings</h2>
+
+    <h3>Variables in string templates</h3>
+    <p id="templateVariables"></p>
+    <script>
+        let tvCode = "CSC209";
+        let tvName = "Web Programming";
+        let tvElement = document.getElementById("templateVariables");
+        tvElement.innerHTML = `Current class: ${tvCode} ${tvName}`;
+    </script>
+
+    <br>
+
+    <h3>Slicing a string</h3>
+    <p id="stringSlice"></p>
+    <script>
+        let slString = "Hello world!";
+        let slElement = document.getElementById("stringSlice");
+        slElement.innerHTML = `Original string: ${slString}<br>Slice: ${slString.slice(3, 9)}`;
+    </script>
+
+    <br>
+
+    <h3>Splitting a string</h3>
+    <p id="stringSplit"></p>
+    <script>
+        let spString = "Hello world!";
+        let spElement = document.getElementById("stringSplit");
+        spElement.innerHTML = `Original string: ${spString}<br>Split array: ${JSON.stringify(spString.split(" "))}`;
+    </script>
+
+    <hr>
+
+    <h2>Arrays</h2>
+
+    <h3>Push to an array</h3>
+    <p id="arrPush1"></p>
+    <p id="arrPush2"></p>
+    <script>
+        let aPushArr = ["Apple", "Banana"];
+        let aPushElement1 = document.getElementById("arrPush1");
+        let aPushElement2 = document.getElementById("arrPush2");
+        aPushElement1.innerHTML = `Original array: ${JSON.stringify(aPushArr)}`;
+        aPushArr.push("Orange");
+        aPushElement2.innerHTML = `After push: ${JSON.stringify(aPushArr)}`;
+    </script>
+
+    <br>
+
+    <h3>Pop an array</h3>
+    <p id="arrPop1"></p>
+    <p id="arrPop2"></p>
+    <script>
+        let aPopElement1 = document.getElementById("arrPop1");
+        let aPopElement2 = document.getElementById("arrPop2");
+        aPopElement1.innerHTML = `Original array: ${JSON.stringify(aPushArr)}`;
+        let apPopped = aPushArr.pop();
+        aPopElement2.innerHTML = `After pop: ${JSON.stringify(aPushArr)}<br>Popped element: ${apPopped}`;
+    </script>
+
+    <br>
+
+    <h3>Splice (add) an element in</h3>
+    <p id="arrSpliceAdd1"></p>
+    <p id="arrSpliceAdd2"></p>
+    <script>
+        let aSpliceArr = ["Apple", "Banana"];
+        let aSpliceElement1 = document.getElementById("arrSpliceAdd1");
+        let aSpliceElement2 = document.getElementById("arrSpliceAdd2");
+        aSpliceElement1.innerHTML = `Original array: ${JSON.stringify(aSpliceArr)}`;
+        aSpliceArr.splice(1, 0, "Orange");
+        aSpliceElement2.innerHTML = `After splice: ${JSON.stringify(aSpliceArr)}`;
+    </script>
+
+    <br>
+
+    <h3>Replace an element with splice</h3>
+    <p id="arrSpliceRep1"></p>
+    <p id="arrSpliceRep2"></p>
+    <script>
+        aSpliceElement1 = document.getElementById("arrSpliceRep1");
+        aSpliceElement2 = document.getElementById("arrSpliceRep2");
+        aSpliceElement1.innerHTML = `Original array: ${JSON.stringify(aSpliceArr)}`;
+        aSpliceArr.splice(1, 1, "Lemon", "Mango");
+        aSpliceElement2.innerHTML = `After splice: ${JSON.stringify(aSpliceArr)}`;
+    </script>
+
+    <br>
+
+    <h3>Delete an element with splice</h3>
+    <p id="arrSpliceDel1"></p>
+    <p id="arrSpliceDel2"></p>
+    <script>
+        aSpliceElement1 = document.getElementById("arrSpliceDel1");
+        aSpliceElement2 = document.getElementById("arrSpliceDel2");
+        aSpliceElement1.innerHTML = `Original array: ${JSON.stringify(aSpliceArr)}`;
+        aSpliceArr.splice(1, 1);
+        aSpliceElement2.innerHTML = `After splice: ${JSON.stringify(aSpliceArr)}`;
+    </script>
+
+    <br>
+
+    <h3>Slicing an array</h3>
+    <p id="arrSlice"></p>
+    <script>
+        aSpliceArr.splice(1, 0, "Orange", "Lemon");
+        let aSliceElement = document.getElementById("arrSlice");
+        aSliceElement.innerHTML = `Original array: ${JSON.stringify(aSpliceArr)}<br>Slice: ${JSON.stringify(aSpliceArr.slice(1, 3))}`;
+    </script>
+
+    <br>
+
+    <p><i><a href="tutorials.html">Back to Hw3 Tutorials</a></i></p>
+</body>
+</html>

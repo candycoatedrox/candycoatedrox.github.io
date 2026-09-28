@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biconditionals</title>
+    <link id="stylesheet" rel="stylesheet" href="css/paletteA.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Technical</h1>
+        <p><i><a href="../hw3.html">Back to Hw3</a></i></p>
+    </header>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="navinfo">
+                <b>MTH153</b>
+                <br> Intro to Discrete Math
+                <br> Fall 2026
+                <br> Jennifer Beichman
+            </div>
+
+            <br>
+
+            <img width="200px" src="https://discrete.openmathbooks.org/assets/images/cover4.png">
+
+            <hr>
+
+            <ul class="external">
+                <li><a href="https://www.gradescope.com/">Gradescope</a> (Homework)</li>
+                <li><a href="https://www.overleaf.com">Overleaf</a> (Proofs)</li>
+                <li><a href="https://discrete.openmathbooks.org/dmoi4/frontmatter.html">Textbook</a></li>
+            </ul>
+
+            <hr>
+
+            <div class="layoutButtons">
+                <button onclick="setPalette(0)">Palette A</button>
+                <button onclick="setPalette(1)">Palette B</button>
+                <button onclick="toggleLayout()">Flip Menu</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Biconditionals</h2>
+
+            <p style="text-align: center;">P<>Q or <i>"P if and only if Q."</i></p>
+            <p style="text-align: center;">Let P be "We do not have class"; let Q be "It is Mountain Day"; then P<>Q is "<u>We do not have class if and only if it is Mountain Day.</u>"</p>
+
+            <br>
+            
+            <div class="center">
+                <table class="truthTable">
+                    <caption>Truth Table:</caption>
+                    <tr>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>P<>Q</th>
+                    </tr>
+                    <tr>
+                        <td>T</td>
+                        <td>T</td>
+                        <td>T</td>
+                    </tr>
+                    <tr>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>T</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>F</td>
+                        <td>T</td>
+                    </tr>
+                </table>
+            </div>
+
+            <br>
+            
+            <p style="text-align:center;"><i><a href="technical.html">Back to main</a></i></p>
+        </div>
+    </div>
+
+    <script>
+        var MAIN = document.querySelector(".main");
+        var NAVBAR = document.querySelector(".navbar");
+        var LAYOUTBUTTONS = document.querySelector(".layoutButtons");
+    </script>
+
+</body>
+</html>

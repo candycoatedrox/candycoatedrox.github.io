@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hw3 Creative</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="bubble">
+            <h1>Color a Rainbow!</h1>
+        </div>
+    </header>
+
+    <br><br>
+
+    <div class="center">
+        <canvas id="rainbowCanvas" width="750" height="500"></canvas>
+    </div>
+
+    <br>
+
+    <div class="colorButtons">
+        <button><span class="addRemoveText">Add</span> Red</button>
+        <button><span class="addRemoveText">Add</span> Orange</button>
+        <button><span class="addRemoveText">Add</span> Yellow</button>
+        <button><span class="addRemoveText">Add</span> Green</button>
+        <button><span class="addRemoveText">Add</span> Blue</button>
+        <button><span class="addRemoveText">Add</span> Purple</button>
+    </div>
+
+    <br>
+
+    <div class="colorButtons globalButtons">
+        <button id="addAll" onclick="setAllColors(true)">Add All Colors</button>
+        <button id="removeAll" onclick="setAllColors(false)" style="display: none;">Remove All Colors</button>
+    </div>
+
+    <br><br>
+
+    <footer>
+        <div class="bubble"><a href="../hw3.html">Back to Hw3</a></div>
+    </footer>
+
+    <script>
+        var CANVAS = document.getElementById("rainbowCanvas");
+        var CTX = CANVAS.getContext("2d");
+
+        var COLORS = [false, false, false, false, false, false];
+        var COLORBUTTONS = document.querySelector(".colorButtons").children;
+        var ADDREMOVETEXT = document.querySelectorAll(".addRemoveText");
+
+        var ADDBUTTON = document.getElementById("addAll");
+        var REMOVEBUTTON = document.getElementById("removeAll");
+
+        for (let i = 0; i < COLORBUTTONS.length; i++) {
+            const button = COLORBUTTONS[i];
+            button.addEventListener("click", () => {
+                toggleColor(i);
+            });
+        }
+
+        drawScene();
+    </script>
+</body>
+</html>

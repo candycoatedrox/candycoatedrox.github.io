@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hw2 Technical</title>
+    <link id="stylesheet" rel="stylesheet" href="css/paletteA.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Technical</h1>
+        <p><i><a href="../hw3.html">Back to Hw3</a></i></p>
+    </header>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="navinfo">
+                <b>MTH153</b>
+                <br> Intro to Discrete Math
+                <br> Fall 2026
+                <br> Jennifer Beichman
+            </div>
+
+            <br>
+
+            <img width="200px" src="https://discrete.openmathbooks.org/assets/images/cover4.png">
+
+            <hr>
+
+            <ul class="external">
+                <li><a href="https://www.gradescope.com/">Gradescope</a> (Homework)</li>
+                <li><a href="https://www.overleaf.com">Overleaf</a> (Proofs)</li>
+                <li><a href="https://discrete.openmathbooks.org/dmoi4/frontmatter.html">Textbook</a></li>
+            </ul>
+
+            <hr>
+
+            <div class="layoutButtons">
+                <button onclick="setPalette(0)">Palette A</button>
+                <button onclick="setPalette(1)">Palette B</button>
+                <button onclick="toggleLayout()">Flip Menu</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Logical Connectives</h2>
+
+            <br>
+
+            <div class="center dateFlex">
+                <button class="standard" style="vertical-align:text-bottom;" onclick="showDate()">Today's date is:</button>
+                <p id="date" style="display:none;"></p>
+            </div>
+            
+
+            <hr>
+            <br>
+
+            <p id="readmeText" style="display:none;">Logical connectives are used to build more complex ("molecular") logical statements out of small ("atomic") statements.</p>
+            <div class="center">
+                <button id="readme" class="standard" onclick="toggleReadMe()">Read me</button>
+            </div>
+
+            <br>
+
+            <p style="text-align:center;">Hidden rows: <span id="hiddenRowCount">0</span></p>
+            <div class="center showButtons">
+                <button id="showAll" onclick="showTable()" style="display:none;">Show Table</button>
+                <button id="hideAll" onclick="hideTable()">Hide Table</button>
+            </div>
+
+            <br>
+            <div class="center showButtons" id="colToggles">
+                <button class="columnToggle" onclick="toggleColumn(0)"><span class="colShowHide">Hide</span> Symbol</button>
+                <button class="columnToggle" onclick="toggleColumn(1)"><span class="colShowHide">Hide</span> Name</button>
+                <button class="columnToggle" onclick="toggleColumn(2)"><span class="colShowHide">Hide</span> Read as</button>
+                <button class="columnToggle" onclick="toggleColumn(3)"><span class="colShowHide">Hide</span> Description</button>
+                <button class="columnToggle" onclick="toggleColumn(4)"><span class="colShowHide">Hide</span> Hide Row</button>
+            </div>
+
+            <br><br>
+
+            <div class="center">
+                <table id="connectiveTable">
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Read as</th>
+                        <th>Description</th>
+                        <th>Hide Row</th>
+                    </tr>
+                    <tr>
+                        <td class="symbol">~</td>
+                        <td><a href="negation.html">Negation</a></td>
+                        <td>NOT</td>
+                        <td>~P is true when P is false.</td>
+                        <td><div class="center">
+                            <button class="standard" onclick="hideRow(1)">Hide</button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td class="symbol">^</td>
+                        <td><a href="conjunction.html">Conjunction</a></td>
+                        <td>AND</td>
+                        <td>P^Q is true <i>only</i> if both P and Q are true.</td>
+                        <td><div class="center">
+                            <button class="standard" onclick="hideRow(2)">Hide</button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td class="symbol">v</td>
+                        <td><a href="disjunction.html">Disjunction</a></td>
+                        <td>OR</td>
+                        <td>PvQ is true if P, Q, or both are true.</td>
+                        <td><div class="center">
+                            <button class="standard" onclick="hideRow(3)">Hide</button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td class="symbol">></td>
+                        <td><a href="conditional.html">Conditional</a></td>
+                        <td>IMPLIES</td>
+                        <td>P>Q is true <i>unless</i> P but ~Q.</td>
+                        <td><div class="center">
+                            <button class="standard" onclick="hideRow(4)">Hide</button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td class="symbol"><></td>
+                        <td><a href="biconditional.html">Biconditional</a></td>
+                        <td>IF AND ONLY IF</td>
+                        <td>P<>Q is true when P and Q are both true or both false.</td>
+                        <td><div class="center">
+                            <button class="standard" onclick="hideRow(5)">Hide</button>
+                        </div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <br><br>
+            <hr>
+
+            <div id="credits" style="display:none;">
+                <p>Image taken from openmathbooks.org.</p>
+                <p>Resources used for code:</p>
+                <ul>
+                    <li><b>w3schools.com</b> tutorials
+                        <ul>
+                            <li><a href="https://www.w3schools.com/jsref/prop_element_children.asp">HTML DOM Element children</a></li>
+                            <li><a href="https://www.w3schools.com/jsref/prop_element_classlist.asp">HTML DOM Element classList</a></li>
+                            <li><a href="https://www.w3schools.com/csS/css3_buttons.asp">CSS Styling Buttons</a></li>
+                            <li><a href="https://www.w3schools.com/cssref/css3_pr_opacity.php">CSS opacity property</a></li>
+                        </ul>
+                    </li>
+                    <li><b>MDN Web Docs</b> by Mozilla
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Ordering_items">Ordering flex items</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <button id="creditsButton" class="standard" style="font-style:italic;" onclick="toggleCredits()">Show Credits</button>
+        </div>
+    </div>
+
+    <script>
+        var MAIN = document.querySelector(".main");
+        var NAVBAR = document.querySelector(".navbar");
+        var LAYOUTBUTTONS = document.querySelector(".layoutButtons");
+        
+        var READMEBUTTON = document.getElementById("readme");
+        var READMETEXT = document.getElementById("readmeText");
+        var DATETEXT = document.getElementById("date");
+        var CREDITSBUTTON = document.getElementById("creditsButton");
+        var CREDITSTEXT = document.getElementById("credits");
+
+        var SHOWBUTTON = document.getElementById("showAll");
+        var HIDEBUTTON = document.getElementById("hideAll");
+
+        var TABLE = document.getElementById("connectiveTable");
+        var ROWS = document.getElementsByTagName("tr");
+        var HIDDENCOUNT = document.getElementById("hiddenRowCount");
+
+        var HIDDENROWS = 0;
+        var HIDDENCOLS = 0;
+
+        var TOGGLEBUTTONS = document.getElementById("colToggles");
+        var COLUMNTOGGLETEXTS = document.getElementsByClassName("colShowHide");
+        var COLUMNS = [[], [], [], [], []];
+        for (let i = 0; i < ROWS.length; i++) {
+            const row = ROWS[i];
+            const cells = row.children;
+            for (let j = 0; j < cells.length; j++) {
+                COLUMNS[j].push(cells[j]);
+            }
+        }
+    </script>
+
+</body>
+</html>

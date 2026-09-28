@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS HTML Events</title>
+    <style>
+        body { padding: 0 10px; }
+    </style>
+</head>
+
+<body>
+    <h1>JS HTML Events</h1>
+
+    <br>
+
+    <h3>Onclick</h3>
+    <button onclick="this.innerHTML = 'Hello!'">Click me!</button>
+
+    <br>
+
+    <h3>With event listener</h3>
+    <button id="eventListener">Click me!</button>
+    <p id="eventListenerDemo"></p>
+    <script>
+        const button = document.getElementById("eventListener");
+        button.addEventListener("click", () => {
+            document.getElementById("eventListenerDemo").innerHTML = "Hello!";  
+        });
+    </script>
+
+    <br>
+
+    <h3>Mouse hover</h3>
+    <div id="hoverBox" style="width:200px; height:50px; padding: 10px 10px; background-color: #c2e3e6;">Move mouse over this box</div>
+    <script>
+        const hoverBox = document.getElementById("hoverBox");
+        hoverBox.addEventListener("mouseover", () => {
+            hoverBox.style.backgroundColor = "#66e3ec";
+        });
+        hoverBox.addEventListener("mouseout", () => {
+            hoverBox.style.backgroundColor = "#c2e3e6";
+        });
+    </script>
+
+    <br>
+
+    <h3>Mouse coordinates</h3>
+    <p id="mouseCoords">Move mouse around the window.</p>
+    <script>
+        const mouseCoords = document.getElementById("mouseCoords");
+        document.addEventListener("mouseover", () => {
+            mouseCoords.innerHTML = `X: ${event.clientX}<br>Y: ${event.clientY}`;
+        });
+    </script>
+
+    <br>
+
+    <h3>Key press</h3>
+    <input id="keydownInput" type="text" placeholder="Type here">
+    <p id="keydownDemo">Enter text in the input field.</p>
+    <script>
+        const keydownInput = document.getElementById("keydownInput");
+        const keydownDemo = document.getElementById("keydownDemo");
+        keydownInput.addEventListener("keydown", () => {
+            keydownDemo.innerHTML = `Key pressed: ${event.key}`;
+        });
+    </script>
+
+    <br>
+
+    <p><i><a href="tutorials.html">Back to Hw3 Tutorials</a></i></p>
+</body>
+</html>
