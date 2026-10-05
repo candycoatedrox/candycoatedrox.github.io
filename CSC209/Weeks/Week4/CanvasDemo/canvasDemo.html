@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Demo (1)</title>
+    <script src="canvasDemo.js"></script>
+</head>
+<body>
+    <h1>Canvas Demo</h1>
+
+    <p>Number of points: <span id="nPts">5</span></p>
+    <p>Number of edges: <span id="nEdges">5</span></p>
+
+    <canvas id="ptsCanvas" width="800" height="600" style="border:1px solid black;"></canvas>
+
+    <script>
+        var CANVAS = document.getElementById("ptsCanvas");
+        var CTX = CANVAS.getContext("2d");
+
+        var PTSDIV = document.getElementById("nPts");
+        var EDGESDIV = document.getElementById("nEdges");
+
+        tablesScene(CANVAS, CTX);
+    </script>
+</body>
+</html>
