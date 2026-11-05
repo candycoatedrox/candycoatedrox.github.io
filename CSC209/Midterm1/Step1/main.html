@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hw4 Technical/Creative</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        var NPTS = 11;
+        var NEDGES = 3;
+        var MAXEDGES = 5;
+    </script>
+    
+    <script src="js/constants.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script src="js/classes.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/dom.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Technical / Creative</h1>
+        <p><i><a href="../hw4.html">Back to Hw4</a></i></p>
+    </header>
+
+    <main>
+        <div class="leftCol">
+            <canvas id="ptsCanvas" width="800" height="600"></canvas>
+        </div>
+
+        <div class="rightCol">
+            <div class="show">
+                <u>Show</u>
+                <div class="showboxes">
+                    <label><input type="checkbox" id="showPoints" checked> Points</label>
+                    <label><input type="checkbox" id="showPointLabs" checked> Point Labels</label>
+                    <br>
+                    <label><input type="checkbox" id="showEdges" checked> Edges</label>
+                    <label><input type="checkbox" id="showEdgeLabs" checked> Edge Labels</label>
+                </div>
+            </div>
+
+            <div class="counts">
+                Number of points: <input type="number" class="numField" id="nPts" value="11">
+                <br>
+                Number of edges: <input type="number" class="numField" id="nEdges" value="3">
+                <span id="ptsError" style="display: none;"><br>Number of points must be<br>between 1 and 16.</span>
+                <span id="edgesError" style="display: none;"><br>Number of edges must be<br>between 0 and <span id="maxEdges">20</span>.</span>
+            </div>
+
+            <div class="buttons">
+                <button onclick="randomScene(CANVAS, CTX)">Randomize</button>
+                <button onclick="circleScene(CANVAS, CTX)">Circle Layout</button>
+                <button onclick="tablesScene(CANVAS, CTX)">Tables Layout</button>
+            </div>
+
+            <div class="coordinates">
+                <u>Coordinates</u>
+
+                <div class="wrap">
+                    <div class="column">
+                        <ul id="coordsListA">
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul id="coordsListB">
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coordinates">
+                <u>Edges</u>
+
+                <div class="wrap">
+                    <div class="column">
+                        <ul id="edgesListA">
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul id="edgesListB">
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                            <li>aa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        var CANVAS = document.getElementById("ptsCanvas");
+        var CTX = CANVAS.getContext("2d");
+
+        var PTSSELECT = document.getElementById("nPts");
+        var PTSERROR = document.getElementById("ptsError");
+        var EDGESSELECT = document.getElementById("nEdges");
+        var EDGESERROR = document.getElementById("edgesError");
+        var MAXEDGESTEXT = document.getElementById("maxEdges");
+
+        var SHOW = {
+            points: document.getElementById("showPoints"),
+            pointLabs: document.getElementById("showPointLabs"),
+            edges: document.getElementById("showEdges"),
+            edgeLabs: document.getElementById("showEdgeLabs")
+        };
+
+        var COORDSA = document.getElementById("coordsListA");
+        var COORDSB = document.getElementById("coordsListB");
+        var EDGESA = document.getElementById("edgesListA");
+        var EDGESB = document.getElementById("edgesListB");
+
+        var POINTS = new Points(NPTS);
+        var EDGES = new Edges(NEDGES);
+
+        
+        initShowBoxes(CANVAS, CTX);
+        tablesScene(CANVAS, CTX);
+    </script>
+</body>
+</html>

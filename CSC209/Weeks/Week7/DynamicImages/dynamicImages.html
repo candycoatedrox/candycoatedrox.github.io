@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Images with JavaScript</title>
+    <style>
+        body { padding: 0 10px; }
+        img { max-width: 500px; }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic Images with JavaScript</h1>
+    <p><a href="../../../main.html">Back to index</a></p>
+    <br>
+
+    <div id="images"></div>
+
+    <script>
+        var CONTAINER = document.getElementById("images");
+        var TEMPLATE = "<img src='images/FILENAME'><br>";
+        var FILENAMES = [
+            "contrarian icon 7-2-26.png",
+            "VOT SMITTEN REF SHEET drawing only.png",
+            "PHOENIX vot broken v2.png",
+            "VOT BROKEN CHIBI.png",
+            "PHOENIX a little help for a dear friend.png"
+        ];
+
+        createImages();
+
+        function createImages() {
+            let html = "";
+            for (let i = 0; i < FILENAMES.length; i++) {
+                html += TEMPLATE.replace("FILENAME", FILENAMES[i]);
+            }
+            CONTAINER.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

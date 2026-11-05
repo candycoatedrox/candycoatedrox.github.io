@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Demo</title>
+    <style>
+        body { padding: 0 10px; }
+        h3 { font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Events Demo</h1>
+    <p><i><a href="../../main.html">Back to index</a></i></p>
+
+    <br>
+
+    <h2>Basic Events</h2>
+
+    <h3>With attribute (direct code)</h3>
+    <button onclick="document.getElementById('demo1').innerHTML = Date()">The time is?</button>
+    <p id="demo1"></p>
+
+    <h3>With attribute (calling a function)</h3>
+    <button onclick="displayDate('demo2')">The time is?</button>
+    <p id="demo2"></p>
+    <script>
+        function displayDate(id) {
+            document.getElementById(id).innerHTML = Date();
+        }
+    </script>
+
+    <h3>With event listener</h3>
+    <button id="btn1">The time is?</button>
+    <p id="demo3"></p>
+    <script>
+        const btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click", () => displayDate("demo3"));
+        // notably it didn't work when I just put displayDate() directly in there...
+    </script>
+
+    <br><hr><br>
+
+    <h2>Mouse Events</h2>
+
+    <h3>Mouseover, mouseout</h3>
+    <div id="box1" style="width: 200px; height: 100px; padding: 15px; background-color:lightcoral;">
+        Hover over this box
+    </div>
+    <script>
+        const box1 = document.getElementById("box1");
+        box1.addEventListener("mouseover", () => { box1.innerHTML = "Mouse moved onto box"; });
+        box1.addEventListener("mouseout", () => { box1.innerHTML = "Mouse moved away"; });
+    </script>
+
+    <h3>Mousemove (and mouse position)</h3>
+    <p>Mouse position: <span id="demo4"></span></p>
+    <script>
+        const demo4 = document.getElementById("demo4");
+        document.addEventListener("mousemove", event => { demo4.innerHTML = `X: ${event.clientX}, Y: ${event.clientY}`; });
+    </script>
+
+    <br><hr><br>
+
+    <h2>Keyboard Events</h2>
+
+    <h3>Show key press</h3>
+    <input id="key1" type="text" placeholder="Press any key">
+    <p id="demo5"></p>
+    <script>
+        const key1 = document.getElementById("key1");
+        key1.addEventListener("keydown", event => {
+            document.getElementById("demo5").innerHTML = `You pressed: ${event.key}`;
+        });
+    </script>
+
+    <h3>Detect enter</h3>
+    <input id="key2" type="text" placeholder="Press Enter">
+    <p id="demo6"></p>
+    <script>
+        const key2 = document.getElementById("key2");
+        key2.addEventListener("keydown", event => {
+            if (event.code === "Enter") {
+                document.getElementById("demo6").innerHTML = "Enter pressed!";
+            }
+        });
+    </script>
+
+    <br><hr><br>
+    
+    <h2><a href="loadEventsDemo.html">Load Events</a></h2>
+    <p>On a separate page so it'll all be visible when the page, well, loads.</p>
+
+    <br><hr><br>
+
+    <h2>Event Management</h2>
+
+</body>
+</html>

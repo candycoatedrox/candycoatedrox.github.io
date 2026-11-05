@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load Events Demo</title>
+    <style>
+        body { padding: 0 10px; }
+        h3 { font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Load Events Demo</h1>
+    <p><i><a href="eventsDemo.html">Back to other events</a></i></p>
+
+    <br>
+
+    <h3>DOMContentLoaded event</h3>
+    <p id="demo1"></p>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => { document.getElementById("demo1").innerHTML = "HTML loaded!" });
+    </script>
+
+    <h3>Load event</h3>
+    <p id="demo2"></p>
+    <script>
+        window.addEventListener("load", () => { document.getElementById("demo2").innerHTML = "Page is fully loaded!" });
+    </script>
+
+    <h3>Image load</h3>
+    <img id="img" src="https://2.bp.blogspot.com/-AQ2kdKkFc3s/UaFg5ZKMzvI/AAAAAAAAC18/DLsj-uMDa70/s1600/rainbow.jpg" width="400">
+    <p id="demo3"></p>
+    <script>
+        const img = document.getElementById("img");
+        img.addEventListener("load", () => { document.getElementById("demo3").innerHTML = "Image loaded!" });
+    </script>
+
+</body>
+</html>

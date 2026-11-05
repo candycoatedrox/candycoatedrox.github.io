@@ -1,0 +1,65 @@
+body {
+    padding: 0 10px;
+}
+
+header {
+    text-align: center;
+}
+
+.slideshowContainer {
+    background-color: #dddddd;
+    padding: 15px 0;
+}
+
+.slideshow { display: none; }
+.slideshow.active { display: block; }
+
+.dropdown {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+select {
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: bold;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+.slide.active { display: block; }
+
+.numbertext {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: #444;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.slideImage {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.caption {
+    font-style: italic;
+}

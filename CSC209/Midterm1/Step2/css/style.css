@@ -1,0 +1,108 @@
+body {
+    background-color: #ebddf1;
+
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* background-color: #b05dd9; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 300px 0;
+}
+
+h1 {
+    font-style: italic;
+}
+
+header p {
+    font-size: 1.25em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+canvas {
+    background-color: #fefaff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+div.rightCol {
+    background-color: #c68cdf;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    height: 570px;
+    padding: 15px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    text-align: center;
+}
+
+.showboxes {
+    font-size: 0.9em;
+}
+
+.numField {
+    width: 4em;
+}
+
+button {
+    background-color: #fefaff;
+    border: none;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+button:hover {
+    background-color: #ede7ef;
+}
+
+div.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+div.buttons button {
+    border-radius: 10px;
+    width: 120px;
+    padding: 8px 5px;
+}
+
+div.coordinates button {
+    border-radius: 3px;
+    margin-top: 5px;
+    padding: 3px 5px;
+}
+
+.wrap {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    margin-top: 5px;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 135px;
+    text-align: left;
+    font-size: 0.9em;
+}

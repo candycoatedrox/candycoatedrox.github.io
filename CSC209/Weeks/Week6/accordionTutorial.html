@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accordion Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { padding: 0 10px; }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+
+        .accordion {
+            background-color: #ddd;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2em;
+            border: none;
+        }
+
+        .accordion.active, .accordion:hover {
+            background-color: #bbb;
+        }
+
+        .panel {
+            padding: 0 10px;
+            border: 2px solid #bbb;
+            display: none;
+        }
+
+        .panel.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accordion Tutorial</h1>
+    <p><i><a href="../../main.html">Back to Index</a></i></p>
+
+    <div class="wrap">
+        <button class="accordion">Header 1</button>
+        <div class="panel">
+            <p>Testing testing 123...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Header 2</button>
+        <div class="panel">
+            <p>Testing testing 123...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Header 3</button>
+        <div class="panel">
+            <p>Testing testing 123...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+
+    <script>
+        var ACCORDIONS = document.getElementsByClassName("accordion");
+
+        for (let i = 0; i < ACCORDIONS.length; i++) {
+            ACCORDIONS[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                panel.classList.toggle("active");
+            });
+        }
+    </script>
+</body>
+</html>
