@@ -30,9 +30,14 @@ table {
 }
 
 th {
-    background-color: #5191c5;
+    cursor: pointer;
+    background-color: #5a9ed5;
     padding: 10px 20px;
     font-size: 1.2em;
+}
+
+th:hover {
+    background-color: #5191c5;
 }
 
 td {

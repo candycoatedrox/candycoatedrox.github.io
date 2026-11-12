@@ -8,7 +8,7 @@ function readJSON($path) {
 function createTable($path) {
     $data = readJSON($path); // get JSON data
 
-    $html = '<table>';
+    $html = '<table id="table">';
     
     $firstRow = true;
     foreach ($data as $user) {
@@ -23,7 +23,7 @@ function createTable($path) {
 
         $html .= '<tr>';
         foreach ($user as $field => $val) {
-            $html .= "<td>$val</td>";
+            $html .= "<td class=\"" . $field . "Cell\">$val</td>";
         }
         $html .= '</tr>';
     }
